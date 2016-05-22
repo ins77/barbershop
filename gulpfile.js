@@ -195,5 +195,5 @@ gulp.task('watch', function() {
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'server')));
 
 gulp.task('deploy', function() {
-	gulp.src(['dist/**/*', '!dist/robots.txt']).pipe(ghpages({branch: 'dist'}))
+	return gulp.src(['dist/**/*', '!dist/robots.txt']).pipe(ghpages({branch: 'dist'}))
 });
